@@ -143,8 +143,10 @@ h1 {
 
 .logo {
   width: 100px;
+
 }
-.logo-container {
+.logo-container{
+  height: 50%;
   display: flex;
   align-items: center;
 }
