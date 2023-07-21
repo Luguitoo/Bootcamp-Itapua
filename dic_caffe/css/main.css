@@ -97,7 +97,7 @@ h1 {
 }
 
 .header-container {
-  background-image: url("/images/sample_key.jpg");
+  background-image: url("../images/sample_key.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
@@ -112,7 +112,7 @@ h1 {
   font-family: 'Roboto Mono', monospace;
 }
 .container.menu-container{
-  background-image: url("/images/sample_menu_bg.jpg");
+  background-image: url("../images/sample_menu_bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -192,7 +192,7 @@ footer {
   height: 75px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 20px;
 }
 
@@ -211,11 +211,13 @@ footer {
 .footer-menu li a {
   text-decoration: none;
   color: white;
+  text-align: center;
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
+  margin-left: 50px;
 }
 
 .copywrite {
