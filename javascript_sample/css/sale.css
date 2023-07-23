@@ -95,7 +95,6 @@ key {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    padding: 10px;
   }
   .caffee_menu_image {
     width: 20%;
