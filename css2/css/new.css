@@ -1,0 +1,10 @@
+.menu_list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column; /* Cambio aquí */
+    gap: 20px;
+  }
+.menu_item{
+    width: 100%;
+}
