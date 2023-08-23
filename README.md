@@ -1,5 +1,6 @@
 # Ingeniero Web - Bootcamp
-Acerca del Bootcamp: https://bootcamp.ciditpy.org/
+Acerca del Bootcamp: https://bootcamp.ciditpy.org/ <br>
+Contenido: https://diver.diveintocode.jp/dive_into_course/web_engineer_step_up_django
 # Proyectos:
 - `Imitacion de Sitio (HTML-CSS)`: <br>
 Objetivos: <br>
