@@ -13,8 +13,6 @@
           <el-button type="success" icon="el-icon-check" @click="showTask(index)" circle></el-button>
         </el-card>
         </el-col>
-    
-
     </el-row>
   </div>
     </div>
