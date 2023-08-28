@@ -34,7 +34,7 @@ Objetivos: <br>
 ✔️Grids, plantillas (utilizar y modificar). <br>
 ![image](https://github.com/Luguitoo/Bootcamp-Itapua/assets/112581880/988fc87e-504c-47cf-b153-5ab48600847e)
 - `Vinculación de Vue.js y la API de GitHub (VueJS)`: <br>
-✔️Utilizar la API DE GitHub para modificar y crear issues. <br>
+✔️Utilizar la API de GitHub para modificar y crear issues. <br>
 ✔️Puede implementar la lógica para pasar datos entre componentes. <br>
 ![image](https://github.com/Luguitoo/Ing.Web-Bootcamp/assets/112581880/3ef26038-b1d7-4c67-96af-86c1d3518a9e)
 
