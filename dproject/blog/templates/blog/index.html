@@ -7,24 +7,37 @@
     </head>
  
     <body>
+        {% if messages %} 
+        <ul>
+            {% for message in messages %}  
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>  <!-- 3 -->
+            {% endfor %}
+        </ul>
+        {% endif %}
         <h1>Blogs</h1>
         <table>
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Contenido</th>
-                </tr>
-            </thead>
-            {% for article in articles %}    
             <tr>
-                <td>{{ article.title }}</td>    
-                <td>{{ article.content }}</td> 
-                <td><a href="{% url 'detail' article.id %}">Detail</a></td> 
-                <td><a href="{% url 'edit' article.id %}">Edit</a></td>
-                <td><a href="{% url 'delete' article.id %}">Delete</a></td> 
+              <th>Title</th>
+              <th>Content</th>
+              <th>Check</th>
+              <th>MultipleCheck</th>
+              <th>Pulldown</th>
+              <th>Radio</th>
+            </tr>
+            {% for article in articles %}
+            <tr>
+              <td>{{article.title}}</td>
+              <td>{{article.content}}</td>
+              <td>{{article.check_box}}</td>
+              <td>{{article.multiple_check_box}}</td>
+              <td>{{article.pulldown}}</td>
+              <td>{{article.radio}}</td>
+              <td><a href="{% url 'detail' article.id %}">Detail</a></td>
+              <td><a href="{% url 'edit' article.id %}">Edit</a></td>
+              <td><a href="{% url 'delete' article.id %}">Delete</a></td>
             </tr>
             {% endfor %}
-        </table>
+          </table>
         <br>
         <a href="{% url 'create' %}">Crear Blog</a>
         <br>

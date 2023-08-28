@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from .models import Article
 from .forms import ArticleForm
+from django.contrib import messages
 
 def index(request):
     articles = Article.objects.all()
@@ -12,12 +13,12 @@ def index(request):
     return render(request, 'blog/index.html', params)
 
 def create(request):
-    if (request.method == 'POST'):  # --- 1
-        title = request.POST['title']      # --- 2
-        content = request.POST['content']  # --- 2
-        article = Article(title=title, content=content)  # --- 3
-        article.save()  # --- 4
-        return redirect('index')  # --- 5
+    if (request.method == 'POST'): 
+        obj = Article()
+        article = ArticleForm(request.POST, instance=obj)
+        article.save()
+        messages.add_message(request, messages.SUCCESS, "Blog Creado!!!")
+        return redirect('index') 
     else:
         params = { 
             'form': ArticleForm(),
@@ -34,10 +35,10 @@ def detail(request, article_id):
 def edit(request, article_id):
     article = Article.objects.get(id=article_id)
     if (request.method == 'POST'):
-        article.title = request.POST['title']
-        article.content = request.POST['content']
+        article = ArticleForm(request.POST, instance=article)
         article.save()
-        return redirect('detail', article_id)  # 1
+        article.save()
+        return redirect('detail', article_id)
     else:
         form = ArticleForm(initial={
             'title': article.title,
