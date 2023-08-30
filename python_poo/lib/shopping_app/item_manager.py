@@ -17,6 +17,8 @@ def pick_items(self, number, quantity):   # numberと対応した自身の所有
         return []
     else:
         return items[0]["items"][0:quantity]
+        
+    
 
 def show_items(self):   # 自身の所有するItemインスタンスの在庫状況を、["番号", "商品名", "金額", "数量"]という列でテーブル形式にして出力します。
     table_data = []

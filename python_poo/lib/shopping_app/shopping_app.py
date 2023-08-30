@@ -1,7 +1,6 @@
 from customer import Customer
 from item import Item
 from seller import Seller
-
 vendedor = Seller("DICストア")
 for i in range(10):
     Item("CPU", 40830, vendedor)
@@ -45,7 +44,11 @@ while not fin_compra:
 
 print("💸 ¿Deseas confirmar la compra? (si/no)")
 if input() == "si":
+    vendedor.wallet.deposit(cliente.cart.total_amount())
+    #print(item.owner.name)
     cliente.cart.check_out()
+
+    
 
 print("୨୧┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ Resultados ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈୨୧")
 print(f"️🛍️ ️Pertenencias de {cliente.name}")
@@ -54,6 +57,7 @@ print(f"😱👛 Saldo de la billetera de {cliente.name}: {cliente.wallet.balanc
 
 print(f"📦 Estado de inventario de {vendedor.name}")
 vendedor.show_items()
+
 print(f"😻👛 Saldo de la billetera de {vendedor.name}: {vendedor.wallet.balance}")
 
 print("🛒 Contenido del carrito")

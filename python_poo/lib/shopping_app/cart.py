@@ -1,7 +1,6 @@
 from ownable import Ownable
 class Cart(Ownable):
     from item_manager import show_items
-
     def __init__(self, owner):
         super().__init__() 
         self.set_owner(owner)
@@ -17,23 +16,16 @@ class Cart(Ownable):
         for item in self.items:
             price_list.append(item.price)
         return sum(price_list)
-
+    
+    def clear_cart(self):
+        self.items = []
     def check_out(self):
-        if self.owner.wallet.balance < self.total_amount():
+        if self.owner.wallet.balance > self.total_amount():
+            self.owner.wallet.balance -= self.total_amount()
+            self.owner.cart.owner.wallet.deposit(self.total_amount())  
             for item in self.items:
-                item.owner.wallet.balance += item.price
-                self.owner.wallet.balance -= item.price
-            for item in self.items:
+                #print(f"Item: {item.name}, Price: {item.price}, Owner: {item.owner.name}")
                 item.set_owner(self.owner)
-            
-            self.items = []
-   # check_outメソッドをコーディングする際はpassは削除してください。
-        # 要件
-        #   - カートの中身（Cart#items）のすべてのアイテムの購入金額が、カートのオーナーのウォレットからアイテムのオーナーのウォレットに移されること。
-        #   - カートの中身（Cart#items）のすべてのアイテムのオーナー権限が、カートのオーナーに移されること。
-        #   - カートの中身（Cart#items）が空になること。
-        # ヒント
-        #   - カートのオーナーのウォレット ==> self.owner.wallet
-        #   - アイテムのオーナーのウォレット ==> item.owner.wallet
-        #   - お金が移されるということ ==> (？)のウォレットからその分を引き出して、(？)のウォレットにその分を入金するということ
-        #   - アイテムのオーナー権限がカートのオーナーに移されること ==> オーナーの書き換え（item.owner = ?）
+            self.clear_cart() 
+        else:
+            print("No puedes comprarlo!!!")
