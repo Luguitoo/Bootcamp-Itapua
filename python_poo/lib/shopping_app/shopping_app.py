@@ -40,11 +40,11 @@ while not fin_compra:
     cliente.cart.show_items()
     print(f"🤑 Monto total: {cliente.cart.total_amount()}")
 
-    print("😭 ¿Deseas finalizar la compra? (sí/no)")
-    fin_compra = input() == "sí"
+    print("😭 ¿Deseas finalizar la compra? (si/no)")
+    fin_compra = input() == "si"
 
-print("💸 ¿Deseas confirmar la compra? (sí/no)")
-if input() == "sí":
+print("💸 ¿Deseas confirmar la compra? (si/no)")
+if input() == "si":
     cliente.cart.check_out()
 
 print("୨୧┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ Resultados ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈୨୧")
