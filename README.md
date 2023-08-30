@@ -25,6 +25,8 @@ Objetivos: <br>
 - `Programa de compras (Python)`: <br>
 Objetivos: <br>
 ✔️Aprovechar las ventajas de la programación orientada a objetos. <br>
+![image](https://github.com/Luguitoo/Ing.Web-Bootcamp/assets/112581880/ab7394e9-0406-499e-8d04-a24871ff1069)
+
 - `Refactorización de CSS (CSS-HTML)`: <br>
 Objetivos: <br>
 ✔️El CSS por componentes puede refactorizarse para ampliar el diseño. <br>
