@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
@@ -29,13 +29,11 @@ class UserCreateAndLoginView(CreateView):
         # Autenticamos al usuario y lo redirigimos al éxito.
         username = form.cleaned_data.get("username")
         raw_pw = form.cleaned_data.get("password1")
-        user = authenticate(username=username, password=raw_pw)
+        email = form.cleaned_data.get("email")
+        age = form.cleaned_data.get("age")
+        user = authenticate(email=email, password=raw_pw)
         login(self.request, user)
         return response
-    
-    @login_required  # Asegura que el usuario esté autenticado
-    def get(self, request, *args, **kwargs):
-        return redirect(self.success_url)
 
 class UserDetail(OnlyYouMixin, DetailView):
     model = User
